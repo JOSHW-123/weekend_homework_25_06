@@ -14,7 +14,8 @@ class Guest():
 
         
     def check_in(self, room, name):
-        pass
+        if room:
+            pass
 
 
     def check_out(self, room):

@@ -1,6 +1,6 @@
 class Room:
 
-    def __init__(self, till, room_status):
+    def __init__(self, till, room_status, inventory):
         self.inventory = []
         self.room_status = room_status
         self.till = till
