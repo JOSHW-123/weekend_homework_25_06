@@ -6,8 +6,8 @@ class Guest():
         self.status = status
 # status will show check in status.
     
-    def check_in(self, room):
-        self.room 
+    def check_in(self, room, name):
+        pass
 
 
     def check_out(self, room):
