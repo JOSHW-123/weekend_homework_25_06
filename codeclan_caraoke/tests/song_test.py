@@ -7,8 +7,14 @@ from classes.song import Song
 class TestSong(unittest.TestCase):
 
     def setUp(self):
-        self.song = Song("The Fire : The Roots", "Playlist_1")
+        self.song_1 = Song("The Fire by The Roots")
+        self.song_2 = Song("Happy Man by Jungle")
         
         
     def test_find_song_by_name(self):
-        self.assertEqual("The Fire : The Roots", self.song.name)
+        self.assertEqual("Gravel Pit by Wu-Tang-Clan", self.song.name)
+
+    def test_add_song(self):
+        self.song.add_song(self.song_1)
+        self.assertEqual(1, self.song.song_count())
+        
