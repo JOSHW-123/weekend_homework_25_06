@@ -1,9 +1,10 @@
 class Song:
     
-    def __init__(self, name):
+    def __init__(self, song, playlist):
         # self.artist = artist
-        self.name = name
+        self.song = song
         self.playlist = []
+        
 
     def song_count(self):
         return len(self.playlist)
