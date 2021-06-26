@@ -18,6 +18,11 @@ class TestRoom(unittest.TestCase):
     #     pass
 
     def test_add_room(self):
-        self.room.add_room(self.room_1)
-        self.assertEqual(1, self.room_count())
+        self.room_1.add_room(self.room_1)
+        self.assertEqual(1, self.room_count)
+
+    def test_find_guest(self):
+            self.assertEqual("Jim", self.room.name)   
+
+    
         

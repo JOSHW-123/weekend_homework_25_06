@@ -26,3 +26,10 @@ class Room:
     def check_in(self, guest):
         if self.inventory > 0 :
             self.guest.bill += self.price
+
+    def add_song(self, song):
+        self.playlist.append(song)
+
+    def find_guest(self, name):
+        if name in self.arrivals == name :
+            return name
