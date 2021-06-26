@@ -1,9 +1,10 @@
 class Room:
 
-    def __init__(self, till, room_status, inventory):
+    def __init__(self, price, room_status, inventory):
         self.inventory = []
         self.room_status = room_status
-        self.till = till
+        self.price = price
+
 
 def room_count(self):
     return len(self.inventory)
