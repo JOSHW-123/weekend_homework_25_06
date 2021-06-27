@@ -10,10 +10,8 @@ class TestSong(unittest.TestCase):
         self.song_1 = Song("The Fire", "The Roots")
         self.song_2 = Song("Happy Man", "Jungle")
         
-        
-        
-    # def test_find_song_by_name(self):
-    #     self.assertEqual("The Fire", self.library)
+    def test_check_if_song_in_library(self):
+        self.assertEqual("We have this song", self.song_1)
 
     def test_add_song(self):
         self.library.add_song(self.song_1)

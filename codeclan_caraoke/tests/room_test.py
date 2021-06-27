@@ -6,12 +6,15 @@ from classes.guest import Guest
 class TestRoom(unittest.TestCase):
 
     def setUp(self):
-        self.room_1 = Room("Occupied", 1, 50, "Jim playlist")
-        self.room_2 = Room("Occupied", 2, 100, "Jon playlist")
+        self.room_1 = Room(1, 50, )
+        self.room_2 = Room("Occupied", 2, 100, )
 
-    def test_room_count(self):
-        self.assertEqual(self.room.inventory) 
+    # def test_room_count(self):
+    #     self.assertEqual(self.inventory) 
 
+    def test_can_check_available_rooms(self):
+        self.assertEqual("We have rooms available", self.inventory())
+        
     # def test_add_room(self):
     #     self.room.add_room(self, room_1)
     #     self.assertEqual(1, self.room.)
@@ -21,8 +24,11 @@ class TestRoom(unittest.TestCase):
         self.room_1.add_room(self.room_1)
         self.assertEqual(1, self.room_count)
 
-    def test_find_guest(self):
-            self.assertEqual("Jim", self.room.name)   
+    # def test_find_guest(self):
+    #     # self.room.
+    #         self.assertEqual("Jim", self.number)   
 
+    def test_add_song(self):
+        self.room.add_song(self.song_1)
     
         
