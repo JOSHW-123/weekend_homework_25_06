@@ -27,8 +27,8 @@ class TestRoom(unittest.TestCase):
     #     # self.room.
     #         self.assertEqual("Jim", self.number)   
 
-    def test_add_song(self):
-        self.room.add_song(self.song_1)
+    # def test_add_song(self):
+    #     self.add_song(self.song_1)
         
     
         

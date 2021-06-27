@@ -4,6 +4,8 @@ class Guest():
         self.name = name
         self.wallet = wallet
         self.ages = age
+        self.favourite_song = {}
+
         
         
 # status will show check in status.
@@ -15,11 +17,18 @@ class Guest():
     def check_guest_name(self):
         return self.name
 
-    def enough_money(self, item):
-        return self.wallet >= item.price
+    def enough_money(self, room):
+        if self.wallet > room.price :
+            return "You have enough money"
+        else:
+            return "Sorry you cant afford this"
 
     def return_wallet_amount(self):
         return self.wallet
+
+    def add_favourite_song(self, ):
+        self.favourite_song["The Fire"] = "The Roots"
+        print(self.favourite_song)
 
     #     if status == True:
     #        return self.name + ("Checked in")
