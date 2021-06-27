@@ -7,8 +7,8 @@ from classes.song import Song
 class TestSong(unittest.TestCase):
 
     def setUp(self):
-        self.song_1 = Song("The Fire", "The Roots", "library_1")
-        self.song_2 = Song("Happy Man", "Jungle", "library_1")
+        self.song_1 = Song("The Fire", "The Roots")
+        self.song_2 = Song("Happy Man", "Jungle")
         
         
         

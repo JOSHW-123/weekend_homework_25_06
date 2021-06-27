@@ -1,7 +1,7 @@
 class Room:
 
-    def __init__(self, price, name, inventory, playlist):
-        self.name = name
+    def __init__(self, price, number, inventory, playlist):
+        self.number = number
         self.price = price
         self.playlist = playlist
         self.inventory = inventory
@@ -11,6 +11,12 @@ class Room:
     def room_count(self):
         return len(self.room.inventory)
 
+    def check_available_rooms(self):
+        if self.inventory >= self.arrivals:
+            return "We have rooms available"
+        else:
+            return "We have no rooms available"
+
     # def add_room(self, room):
     #     self.inventory.append(room)
 
@@ -18,7 +24,7 @@ class Room:
         self.arrivals.append(arrivals)
 
     def add_room(self, room):
-        if room in self.inventory:
+        if 0 in self.inventory:
             self.inventory[room] += 1
         else:
             self.inventory[room] = 1
