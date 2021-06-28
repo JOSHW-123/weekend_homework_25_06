@@ -14,14 +14,14 @@ class TestGuest(unittest.TestCase):
         self.assertEqual("Jim", self.guest.name)
 
     def test_enough_money_true(self):
-        self.assertEqual("You have enough money", self.guest.enough_money)
+        self.assertEqual("You have enough money", self.wallet)
 
     def test_guest_has_wallet(self):
         self.assertEqual(200.00, self.guest.wallet)
     
     def test_add_favourite_song(self):
-        self.favourite_song = {}
-        self.add_favourite_song(self,)
         self.assertEqual([{"The Fire" : "The Roots"}])
+
+        print(self.favourite_song)
 
        

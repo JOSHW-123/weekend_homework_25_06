@@ -11,7 +11,6 @@ class Guest():
 # status will show check in status.
 
     def buy_room(self, room):
-        if self.enough_money(room):
             self.wallet -= room.price
 
     def check_guest_name(self):
@@ -23,7 +22,7 @@ class Guest():
         else:
             return "Sorry you cant afford this"
 
-    def return_wallet_amount(self):
+    def wallet_amount(self):
         return self.wallet
 
     def add_favourite_song(self, ):
