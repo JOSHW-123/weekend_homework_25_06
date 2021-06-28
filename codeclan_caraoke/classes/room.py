@@ -1,16 +1,16 @@
 class Room:
 
-    def __init__(self, number, price, playlist, occupied, guest_user) :
+    def __init__(self, number, price, till) :
         self.number = number
-        self.price = 50
-        self.playlist = ["Happy Man", "The Fire"]
-        self.occupied = False
-        self.guest_user = None 
-        self.arrivals = []
+        self.price = price
+        self.playlist = []
+        self.occupants = []
+        self.till = till
+        self.inventory = []
 
 
     def room_count(self):
-        return len(self.arrivals)
+        return len(self.occupants)
 
     # def check_available_rooms(self):
     #     if self.inventory > self.arrivals:
@@ -22,14 +22,15 @@ class Room:
     # def add_room(self, room):
     #     self.inventory.append(room)
 
-    def add_guest(self, arrivals):
-        self.arrivals.append(arrivals)
+    # def add_guest(self, arrivals):
+    #     self.arrivals.append(arrivals)
 
-    # def add_room(self, room):
-    #     if self.room_count in self.inventory:
-    #         self.inventory[room] += 1
-    #     else:
-    #         self.inventory[room] = 1
+    def create_room(self, room):
+        if self.occupants <= self.inventory:
+            self.occupants[room] += 1
+        else:
+            self.occupants[room] = 1
+            return "Room created"
        
 
     # def check_in(self, guest):
@@ -37,15 +38,22 @@ class Room:
     #         self.guest.bill += self.price
     #     return "You can check in"
 
-    def check_in(self, guest_name):
-        self.occupied = True
-        self.guest_user = guest_name
-        return "Guest checked in"
+    # def check_in(self, guest_name):
+    #     self.occupied = True
+    #     self.guest_user = guest_name
+    #     return "Guest checked in"
 
-    def check_out(self, guest_name):
-        self.occupied = False
-        self.guest_user = None
-        return "Guest checked out"
+    def check_in(self, guest):
+        if self.guest.wallet >= self.price :
+            self.guest.wallet -= self.price
+            self.till += self.price
+            self.occupants.append(guest)
+        return "You are checked in"
+
+
+
+    def check_out(self, guest):
+        self.guests.remove(guest)
 
     
     def add_song(self, song_name):

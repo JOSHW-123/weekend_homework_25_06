@@ -5,23 +5,23 @@ from classes.room import Room
 class TestGuest(unittest.TestCase):
 
     def setUp(self):
-        self.guest = Guest("Jim", 200.00, 32)
+        self.guest_1 = Guest("Jim", 200.00, 32)
+        self.guest_2 = Guest("Tom", 175.00, 45)
 
-    def test_can_buy_room(self):
-        self.assertEqual(50.00, self.guest.buy_room)
+    # def test_can_buy_room(self):
+    #     self.guest_1.buy_room(self.guest_1)
+    #     self.assertEqual(True, self.guest_1.wallet)
 
     def test_guest_has_name(self):
-        self.assertEqual("Jim", self.guest.name)
+        self.assertEqual("Jim", self.guest_1.name)
 
-    def test_enough_money_true(self):
-        self.assertEqual("You have enough money", self.wallet)
+    def test_if_guest_has_enough_money_true(self):
+        self.assertEqual(200.00, self.guest_1.wallet)
 
     def test_guest_has_wallet(self):
-        self.assertEqual(200.00, self.guest.wallet)
+        self.assertEqual(200.00, self.guest_1.wallet)
     
-    def test_add_favourite_song(self):
-        self.assertEqual([{"The Fire" : "The Roots"}])
-
-        print(self.favourite_song)
-
-       
+    # def test_add_favourite_song(self):
+    #     self.add_favourite_song 
+    #     self.assertFalse
+    #         pass
