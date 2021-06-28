@@ -30,7 +30,7 @@ class TestRoom(unittest.TestCase):
     #     pass
 
     def test_create_room_works(self):
-        self.inventory.append(self.inventory)
+        self.inventory.append(self.inventory, )
         self.assertEqual("Room created")
         
         
@@ -44,11 +44,11 @@ class TestRoom(unittest.TestCase):
 
     def test_check_in_works(self):
         self.room_1.check_in(self.guest_1)
-        self.room_2.check_in(self.guest_2)
+        self.assertEqual("You are checked in", self.inventory)
 
 
     def test_check_out_works(self):
-        pass
+        self.room_1.check_out(self.guest_1)
 
         
     

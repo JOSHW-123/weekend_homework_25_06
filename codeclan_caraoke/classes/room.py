@@ -44,8 +44,8 @@ class Room:
     #     return "Guest checked in"
 
     def check_in(self, guest):
-        if self.guest.wallet >= self.price :
-            self.guest.wallet -= self.price
+        if guest.wallet >= self.price :
+            guest.wallet -= self.price
             self.till += self.price
             self.occupants.append(guest)
         return "You are checked in"
