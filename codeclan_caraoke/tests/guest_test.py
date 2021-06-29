@@ -11,6 +11,8 @@ class TestGuest(unittest.TestCase):
     # def test_can_buy_room(self):
     #     self.guest_1.buy_room(self.guest_1)
     #     self.assertEqual(True, self.guest_1.wallet)
+    def test_item_added_to_shopping_list(self):
+        pass
 
     def test_guest_has_name(self):
         self.assertEqual("Jim", self.guest_1.name)

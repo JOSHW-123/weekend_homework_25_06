@@ -48,17 +48,18 @@ class Room:
             guest.wallet -= self.price
             self.till += self.price
             self.occupants.append(guest)
-        return "You are checked in"
+        
 
 
 
     def check_out(self, guest):
-        self.guests.remove(guest)
+        if guest == guest in self.occupants.pop(guest):
+            return "You aare checked out"
 
     
     def add_song(self, song_name):
         self.playlist.append(song_name)
 
     def find_guest(self, guest):
-        if guest in self.arrivals == guest :
+        if guest in self.occupants == guest :
             return guest + self.number

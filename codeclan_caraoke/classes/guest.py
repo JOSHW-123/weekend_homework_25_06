@@ -4,7 +4,13 @@ class Guest():
         self.name = name
         self.wallet = wallet
         self.ages = age
+        self.shopping_list = {}
              
+
+    def add_to_shopping_list(self):
+        self.shopping_list ["Beer"] = "2"
+
+
 # status will show check in status.
 
     # def buy_room(self, room):
@@ -15,10 +21,11 @@ class Guest():
         return self.name
 
     def enough_money(self):
-        return self.wallet >= self.price 
+       if self.wallet >= self.price == True :
+           return True
            
 
-    def wallet_amount(self):
+    def wallet_amount(self, guest):
         return self.wallet
 
     # def add_favourite_song(self):

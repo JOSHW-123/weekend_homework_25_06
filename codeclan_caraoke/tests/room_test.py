@@ -44,7 +44,7 @@ class TestRoom(unittest.TestCase):
 
     def test_check_in_works(self):
         self.room_1.check_in(self.guest_1)
-        self.assertEqual("You are checked in", self.inventory)
+        self.assertEqual( self.inventory)
 
 
     def test_check_out_works(self):
