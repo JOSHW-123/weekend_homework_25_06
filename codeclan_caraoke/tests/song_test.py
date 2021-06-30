@@ -1,13 +1,12 @@
 import unittest
-from classes.room import Room
-from classes.guest import Guest
+
 from classes.song import Song
 
 
 class TestSong(unittest.TestCase):
 
     def setUp(self):
-        self.song_1 = Song("hello")
+        self.song = Song("Highway To Hell", "AC/DC")
        
 
     # def test_song_count(self):
@@ -15,6 +14,36 @@ class TestSong(unittest.TestCase):
         
     # def test_check_if_song_in_library(self):
     #     self.assertEqual("We have this song", self.fav_song_list_1)
+
+    def test_song_has_title(self):
+        self.assertEqual("Highway To Hell", self.song.title)
+
+    def test_song_has_artist(self):
+        song = Song("Highway To Hell", "AC/DC")
+        self.assertEqual("AC/DC", self.song.artist)
+
+    def test_equals_returns_true(self):
+        song = Song("Highway To Hell", "AC/DC")
+        result = self.song.equals(song)
+        self.assertEqual(True, result)
+
+    def test_equals_title_different_returns_false(self):
+        song = Song("Back in Black", "AC/DC")
+        result = self.song.equals(song)
+        self.assertEqual(False, result)
+
+    def test_equals_artist_different_returns_false(self):
+        song = Song("Highway To Hell", "Iron Maiden")
+        result = self.song.equals(song)
+        self.assertEqual(False, result)
+
+    def test_equals_song_different_returns_false(self):
+        song = Song("Ace of Spades", "Iron Maiden")
+        result = self.song.equals(song)
+        self.assertEqual(False, result)
+
+if __name__ == '__main__':
+    unittest.main()
 
     
         

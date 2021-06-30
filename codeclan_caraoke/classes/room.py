@@ -1,13 +1,15 @@
 class Room:
 
-    def __init__(self, number, price, till) :
-        self.number = number
+    def __init__(self, name, price, capacity) :
+        self.name = name
         self.price = price
-        self.playlist = []
-        self.occupants = []
-        self.till = till
-        self.inventory = []
+        self.capacity = capacity
+        self.songs = []
+        self.till = 0
+        self.guests = []
 
+    def number_of_guests(self):
+            return len(self.guests)
 
     def room_count(self):
         return len(self.occupants)
@@ -26,11 +28,11 @@ class Room:
     #     self.arrivals.append(arrivals)
 
     def create_room(self, room):
-        if self.occupants <= self.inventory:
-            self.occupants[room] += 1
+        if self.guests <= self.capacity:
+            self.capacity[room] += 1
         else:
-            self.occupants[room] = 1
-            return "Room created"
+            self.capacity[room] = 1
+            
        
 
     # def check_in(self, guest):
@@ -43,18 +45,27 @@ class Room:
     #     self.guest_user = guest_name
     #     return "Guest checked in"
 
-    def check_in(self, guest):
-        if guest.wallet >= self.price :
-            guest.wallet -= self.price
-            self.till += self.price
-            self.occupants.append(guest)
+    # def check_in(self, guest):
+    #     if guest.wallet >= self.price :
+    #         guest.wallet -= self.price
+    #         self.till += self.price
+    #         self.occupants.append(guest)
+           
+           
+    def check_in_guest(self, guest):
+        if self.free_spaces() > 0 and guest.can_afford(self.fee):
+           guest.pay(self.fee)
+           self.till += self.fee
+           self.guests.append(guest)
         
 
 
+    def check_out_guest(self, guest):
+        self.guests.remove(guest)
 
-    def check_out(self, guest):
-        if guest == guest in self.occupants.pop(guest):
-            return "You aare checked out"
+    # def check_out(self, guest):
+    #     if guest == guest in self.occupants.pop(guest):
+    #         return "You aare checked out"
 
     
     def add_song(self, song_name):

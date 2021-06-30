@@ -1,9 +1,10 @@
 class Guest():
 
-    def __init__(self, name, wallet, age):
+    def __init__(self, name, wallet, age, song):
         self.name = name
         self.wallet = wallet
         self.ages = age
+        self.favourite_song = song
         self.shopping_list = {}
              
 
