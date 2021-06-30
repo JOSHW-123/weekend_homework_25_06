@@ -5,14 +5,22 @@ class Guest():
         self.wallet = wallet
         self.ages = age
         self.favourite_song = song
-        self.shopping_list = {}
+        self.shopping_list = {"beers": 2}
              
 
     def add_to_shopping_list(self):
-        self.shopping_list ["Beer"] = "2"
+            self.shopping_list["beers"] += 1
+            self.shopping_list = {"beers": 2}
+    add_to_shopping_list
 
-
-# status will show check in status.
+#     def func():
+#     ...     dic['a']+=1
+#     ...     
+#     >>> dic = {'a':1}    #dict defined before function call
+#     >>> func()
+#     >>> dic
+#     {'a': 2}
+# # status will show check in status.
 
     # def buy_room(self, room):
     #     if self.enough_money (room):
